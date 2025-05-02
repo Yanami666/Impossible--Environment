@@ -11,27 +11,28 @@ public struct CrosshairSize
     public Vector2 big;
 }
 
-
-public class Crosshair : MonoBehaviour {
-
-    //Sprites
+public class Crosshair : MonoBehaviour
+{
+    // Sprites
     [Header("Icons")]
-    [SerializeField] private Sprite pickUp;
-    [SerializeField] private Sprite note;
-    [SerializeField] private Sprite crosshair;
-    //crossHair image
+    [SerializeField] private Sprite pickUp;     // HandIcon
+    [SerializeField] private Sprite note;       // InspectIcon
+    [SerializeField] private Sprite crosshair;  // Default crosshair
+
+    // Image component
     private Image img;
+
     public CrosshairSize crosshairSize = new CrosshairSize();
     [SerializeField] private InteractionRayCaster _raycaster;
 
-    // Use this for initialization
-    void Start () {
+    void Start()
+    {
         _raycaster = Camera.main.GetComponent<InteractionRayCaster>();
 
         _raycaster.onTargetChange += ChangeCrosshair;
         _raycaster.onNoTarget += ChangeCrosshair;
 
-        img = gameObject.GetComponent<Image>();        
+        img = gameObject.GetComponent<Image>();
     }
 
     private void OnDisable()
@@ -42,18 +43,24 @@ public class Crosshair : MonoBehaviour {
 
     void ChangeCrosshair()
     {
-        if(_raycaster.Hit.collider != null)
+        if (_raycaster.Hit.collider != null)
         {
-            switch (_raycaster.Hit.collider.tag)
+            string hitTag = _raycaster.Hit.collider.tag;
+            Debug.Log("🎯 命中 Tag：" + hitTag);
+
+            switch (hitTag)
             {
                 case "pickUp":
+                case "Interactable": // ✅ 共享 pickUp 样式
                     SetIcon(pickUp);
                     SetSize(crosshairSize.medium);
                     break;
+
                 case "note":
                     SetIcon(note);
                     SetSize(crosshairSize.medium);
                     break;
+
                 default:
                     SetIcon(crosshair);
                     SetSize(crosshairSize.small);
@@ -64,7 +71,6 @@ public class Crosshair : MonoBehaviour {
         {
             SetIcon(crosshair);
             SetSize(crosshairSize.small);
-            return;
         }
     }
 
@@ -77,5 +83,4 @@ public class Crosshair : MonoBehaviour {
     {
         img.GetComponent<RectTransform>().sizeDelta = size;
     }
-
 }
