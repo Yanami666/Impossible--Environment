@@ -51,7 +51,7 @@ public class Crosshair : MonoBehaviour
             switch (hitTag)
             {
                 case "pickUp":
-                case "Interactable": // ✅ 共享 pickUp 样式
+                case "interactable": // ✅ 共享 pickUp 样式（注意大小写）
                     SetIcon(pickUp);
                     SetSize(crosshairSize.medium);
                     break;
