@@ -426,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &107016072
 Transform:
   m_ObjectHideFlags: 0
@@ -441,6 +441,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1401445617}
+  - {fileID: 1016478757}
+  - {fileID: 1948344396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &114737724
@@ -4051,7 +4053,7 @@ GameObject:
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &855285039
 Transform:
   m_ObjectHideFlags: 0
@@ -4692,11 +4694,11 @@ Transform:
   m_GameObject: {fileID: 1016478756}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5419638, y: 0.017548142, z: 0.21787472, w: -0.81147885}
-  m_LocalPosition: {x: 9.57, y: -56.03, z: -12.01}
+  m_LocalPosition: {x: -16.151001, y: -7.347, z: 6.3309994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 107016072}
   m_LocalEulerAnglesHint: {x: 60.685, y: -392.718, z: -49.557}
 --- !u!114 &1016478758
 MonoBehaviour:
@@ -7251,7 +7253,7 @@ GameObject:
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1642371762
 Transform:
   m_ObjectHideFlags: 0
@@ -7809,11 +7811,11 @@ Transform:
   m_GameObject: {fileID: 1948344395}
   serializedVersion: 2
   m_LocalRotation: {x: -0.62475467, y: 0.2462497, z: -0.6505347, w: -0.35474965}
-  m_LocalPosition: {x: -21.57, y: -40.12, z: -3.6999998}
+  m_LocalPosition: {x: -47.291, y: 8.563, z: 14.641}
   m_LocalScale: {x: 2.1947322, y: 2.0764635, z: 0.7974942}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 107016072}
   m_LocalEulerAnglesHint: {x: 49.787, y: -278.738, z: 166.213}
 --- !u!114 &1948344397
 MonoBehaviour:
@@ -9819,8 +9821,6 @@ SceneRoots:
   - {fileID: 644565459}
   - {fileID: 1032577257}
   - {fileID: 107016072}
-  - {fileID: 1016478757}
-  - {fileID: 1948344396}
   - {fileID: 1642371762}
   - {fileID: 855285039}
   - {fileID: 213319479}
