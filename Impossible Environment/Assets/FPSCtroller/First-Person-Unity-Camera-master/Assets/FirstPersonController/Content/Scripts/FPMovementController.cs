@@ -29,6 +29,7 @@ public class FPMovementController : MonoBehaviour
     private bool canJump = true;
     private bool prevGrounded = false;
     private bool grounded;
+    public bool disableJump = false;
 
     private Rigidbody rb;
     private CapsuleCollider _capsule;
@@ -82,7 +83,7 @@ public class FPMovementController : MonoBehaviour
     void Update()
     {
         //jumping
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && jumpingEnabled && canJump)
+        if (!disableJump && Input.GetKeyDown(KeyCode.Space) && IsGrounded() && jumpingEnabled && canJump)
         {
             isJumping = true;
             Jump();
@@ -124,6 +125,10 @@ public class FPMovementController : MonoBehaviour
         YAxisGravity = new Vector3(0, rb.linearVelocity.y - fallRate, 0);
         if (!isJumping) { Move(); }
         rb.linearVelocity += YAxisGravity;
+    }
+    public void SetJumpingDisabled(bool value)
+    {
+        disableJump = value;
     }
 
     #region Player Movement
