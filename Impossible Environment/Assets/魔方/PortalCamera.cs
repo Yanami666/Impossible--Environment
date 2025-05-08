@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalCamera : MonoBehaviour
+public class PortalCamera_mofang : MonoBehaviour
 {
 
     public Transform playerCamera;

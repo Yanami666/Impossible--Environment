@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalTeleporter : MonoBehaviour
+public class PortalTeleporter_mofang : MonoBehaviour
 {
 
     public Transform player;

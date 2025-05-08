@@ -399,6 +399,75 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: ab00f62bb405343c6827142511fb9945, type: 3}
+--- !u!1 &104434415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 104434418}
+  - component: {fileID: 104434417}
+  - component: {fileID: 104434416}
+  m_Layer: 0
+  m_Name: holesceneswitch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &104434416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104434415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d183b72118607439b50c7cffa9d9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: StartScene
+  delayBeforeLoad: 2
+  triggeringTag: Player
+--- !u!65 &104434417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104434415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 34.264545, y: 13.045044, z: 32.214436}
+  m_Center: {x: -3.8881512, y: -6.022522, z: 5.1472225}
+--- !u!4 &104434418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104434415}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.2, y: -75.52, z: 0.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &110056091
 GameObject:
   m_ObjectHideFlags: 0
@@ -3123,7 +3192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorIndex: 2
-  sceneToLoad: OP1
+  sceneToLoad: StartScene
   lightController: {fileID: 386451952}
 --- !u!64 &620896571
 MeshCollider:
@@ -5090,7 +5159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorIndex: 1
-  sceneToLoad: OP1
+  sceneToLoad: StartScene
   lightController: {fileID: 386451952}
 --- !u!64 &1828883897
 MeshCollider:
@@ -6971,7 +7040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorIndex: 0
-  sceneToLoad: OP1
+  sceneToLoad: StartScene
   lightController: {fileID: 386451952}
 --- !u!64 &2094191174
 MeshCollider:
@@ -7066,6 +7135,7 @@ SceneRoots:
   - {fileID: 1884371048}
   - {fileID: 1940809886}
   - {fileID: 129332921}
+  - {fileID: 104434418}
   - {fileID: 1968755495}
   - {fileID: 114737730}
   - {fileID: 230889175}
