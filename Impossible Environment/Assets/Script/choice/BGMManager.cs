@@ -5,42 +5,50 @@ public class BGMManager : MonoBehaviour
 {
     public static BGMManager instance;
 
+    [Header("BGM 设置")]
     public AudioSource bgmSource;
-    public AudioClip connectedScenesBGM; // A、B、C共用的音乐
+    public AudioClip connectedScenesBGM;
 
-    public string[] connectedScenes; // 让你在Inspector里填
+    [Header("哪些场景可以播放 BGM")]
+    public string[] connectedScenes; // 你可以在 Inspector 面板里填
 
     void Awake()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (!IsInConnectedScenes(currentScene))
+        {
+            Destroy(gameObject); // 不在目标场景，直接销毁
+            return;
+        }
+
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (IsInConnectedScenes(scene.name))
-        {
-            if (!bgmSource.isPlaying || bgmSource.clip != connectedScenesBGM)
+            if (!bgmSource.isPlaying)
             {
                 bgmSource.clip = connectedScenesBGM;
                 bgmSource.loop = true;
                 bgmSource.Play();
             }
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
-            // 离开A/B/C场景，停止或换歌
-            bgmSource.Stop();
+            Destroy(gameObject); // 如果已有BGM，新的删掉
+        }
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (!IsInConnectedScenes(scene.name))
+        {
+            if (bgmSource.isPlaying) bgmSource.Stop();
+            Destroy(gameObject);
+            instance = null;
         }
     }
 
@@ -48,7 +56,8 @@ public class BGMManager : MonoBehaviour
     {
         foreach (string name in connectedScenes)
         {
-            if (sceneName == name) return true;
+            if (sceneName == name)
+                return true;
         }
         return false;
     }
