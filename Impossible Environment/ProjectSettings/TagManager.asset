@@ -7,6 +7,11 @@ TagManager:
   - note
   - Interactable
   - pickUp
+  - Main Room
+  - Room
+  - Elevator
+  - SecretRoom
+  - ControlCube
   layers:
   - Default
   - TransparentFX
