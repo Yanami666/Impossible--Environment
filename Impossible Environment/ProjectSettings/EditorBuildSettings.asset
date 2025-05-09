@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/ModularFirstPersonController/DemoScene/PORTAL EE.unity
     guid: 93df743ac9ff027468f262657243c76f
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: fa92fd7100230b14fa475a8f3b241451
+  - enabled: 1
     path: Assets/Scenes/1_choice.unity
     guid: eb67a6bb9bca54375ae8b72917394f85
   - enabled: 1
