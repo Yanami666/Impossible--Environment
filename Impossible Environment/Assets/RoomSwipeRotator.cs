@@ -19,7 +19,7 @@ public class RoomSwipeRotator : MonoBehaviour, IManualTriggerable
 
     public void Trigger()
     {
-        Debug.Log("🟢 Triggered: " + gameObject.name);
+        Debug.Log("Triggered: " + gameObject.name);
         activated = true;
     }
 
@@ -30,22 +30,22 @@ public class RoomSwipeRotator : MonoBehaviour, IManualTriggerable
         if (Input.GetKeyDown(keyLeft))
         {
             Rotate(Vector3.up, -1);
-            Debug.Log("⬅️ 按下 A → 向左转 (Y轴 -90°)");
+            Debug.Log("A-left(Y-90°)");
         }
         else if (Input.GetKeyDown(keyRight))
         {
             Rotate(Vector3.up, 1);
-            Debug.Log("➡️ 按下 D → 向右转 (Y轴 +90°)");
+            Debug.Log("D-right(Y+90°)");
         }
         else if (Input.GetKeyDown(keyUp))
         {
             Rotate(Vector3.right, 1);
-            Debug.Log("⬆️ 按下 W → 向上转 (X轴 +90°)");
+            Debug.Log("w-up(X+90°)");
         }
         else if (Input.GetKeyDown(keyDown))
         {
             Rotate(Vector3.right, -1);
-            Debug.Log("⬇️ 按下 S → 向下转 (X轴 -90°)");
+            Debug.Log("S-down(X-90°)");
         }
     }
 
@@ -74,7 +74,7 @@ public class RoomSwipeRotator : MonoBehaviour, IManualTriggerable
             if (centralCube) centralCube.rotation = endRot;
             isRotating = false;
             activated = false;
-            Debug.Log("✅ 旋转完成");
+            Debug.Log("finish");
         }
     }
 }
