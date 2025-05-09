@@ -15937,6 +15937,10 @@ PrefabInstance:
       propertyPath: _raycaster
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 223239951777476800, guid: 2db81e95b4104e74496527a75daf8fe0, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 224320502165878526, guid: 2db81e95b4104e74496527a75daf8fe0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
